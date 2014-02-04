@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/VisualStudio/2004/01/settings" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+		
+  </xs:annotation>
+  <xs:element name="SettingsFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Profiles" />
+        <xs:element name="Settings">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="Setting">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" name="DesignTimeValue">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="Profile" type="xs:string" use="required" />
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Value">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="Profile" type="xs:string" use="required" />
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Name" type="xs:string" use="required" />
+                  <xs:attribute name="Type" type="xs:string" use="required" />
+                  <xs:attribute name="Scope" type="xs:string" use="required" />
+                  <xs:attribute name="GenerateDefaultValueInCode" type="xs:boolean" use="optional" />
+
+                  
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="CurrentProfile" type="xs:string" use="required" />
+      <xs:attribute name="GeneratedClassNamespace" type="xs:string" use="required" />
+      <xs:attribute name="GeneratedClassName" type="xs:string" use="required" />
+      <xs:attribute name="UseMySettingsClassName" type="xs:boolean" use="optional" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
