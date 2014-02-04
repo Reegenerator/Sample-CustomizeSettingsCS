@@ -23,25 +23,18 @@ namespace CustomizeSettings
         public string LangType
         { get { return GetLangType(this.Type); } }
 
+public const string ReadOnlySuffix = "_ReadOnly";
+public bool IsReadOnly {
+    get{ return Name.EndsWith(ReadOnlySuffix); }
+}
 
-        public bool IsReadOnly
-        {
-            get
-            {
-                return Name.EndsWith(SettingsAccessRenderer.ReadOnlySuffix);
-            }
-        }
-
-        public string PropertyName
-        {
-            get{
-                if (IsReadOnly)
-                {
-                    return Name.Substring(0, Name.Length - SettingsAccessRenderer.ReadOnlySuffix.Length);
-                }
-                else return Name;
-            }
-   
-        }
+public string PropertyName
+{
+    get{
+        if (IsReadOnly)
+            return Name.Substring(0, Name.Length - ReadOnlySuffix.Length);
+        else return Name;
+    }
+}
     }
 }

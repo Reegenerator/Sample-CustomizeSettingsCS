@@ -6,7 +6,7 @@ namespace CustomizeSettings
 
     public partial class SettingsAccessRenderer
     {
-        public const string ReadOnlySuffix = "_ReadOnly";
+       
         /// <summary>
         /// The settings file element as deserialized from the settings file.
         /// </summary>

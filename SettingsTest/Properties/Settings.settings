@@ -6,7 +6,7 @@
       <Value Profile="(Default)">12345</Value>
     </Setting>
     <Setting Name="Address2" GenerateDefaultValueInCode="false" Type="SettingsTest.ParsedType" Scope="User">
-      <Value Profile="(Default)">string[]|one,two,three</Value>
+      <Value Profile="(Default)">Rodeo 123 Los Angeles, CA.</Value>
     </Setting>
     <Setting Name="Address_ReadOnly" Type="System.String" Scope="User">
       <Value Profile="(Default)">This will be rendered as "Address" and will be readonly even in Scope=User</Value>
